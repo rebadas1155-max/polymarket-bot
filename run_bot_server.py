@@ -25,8 +25,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-HOST = os.getenv("BOT_HOST", "127.0.0.1")
-PORT = int(os.getenv("BOT_PORT", "8080"))
+HOST = os.getenv("BOT_HOST", "0.0.0.0")
+PORT = int(os.getenv("PORT", os.getenv("BOT_PORT", "8080")))
 
 def json_serialize(obj):
     if isinstance(obj, (datetime, date)):
